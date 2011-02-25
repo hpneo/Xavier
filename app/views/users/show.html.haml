@@ -2,8 +2,11 @@
 	%h3.cufon1
 		User
 	%h2.cufon1
-		User #
-		=@user.id
+		=@user.last_name
+		,
+		=@user.first_name
+		=@user.last_name
+		(H)
 	%p
 		-if user_signed_in? && current_user.id==@user.id
 			%a{:href => edit_user_registration_path(@user)} Edit profile
