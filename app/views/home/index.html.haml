@@ -24,75 +24,37 @@
 / /slider
 .box
 	%h2.cufon1 New Courses
-	.col
-		%h3
-			%a{:href => "#"} Business planning and situational analysis
-		%p.price $45.00
-		%p
-			Category:
-			%a{:href => "#"} Administrative planning in small business
-	/ /col
-	.col
-		%h3
-			%a{:href => "#"} Business planning and situational analysis
-		%p.price $45.00
-		%p
-			Category:
-			%a{:href => "#"} Administrative planning in small business
-	/ /col
-	.col
-		%h3
-			%a{:href => "#"} Business planning and situational analysis
-		%p.price $45.00
-		%p
-			Category:
-			%a{:href => "#"} Administrative planning in small business
-	/ /col
-	.col
-		%h3
-			%a{:href => "#"} Business planning and situational analysis
-		%p.price $45.00
-		%p
-			Category:
-			%a{:href => "#"} Administrative planning in small business
-	/ /col
+	-unless @recent_courses.empty?
+		-@recent_courses.each do |course|
+			.col
+				%h3
+					%a{:href=>"#"}
+						=course.name
+				%p.price
+					=course.price
+				%p
+					Category:
+					%a{:href => "#"}
+						=course.category
+			/ /col
 	.clr
 		/ 
 / /box
 .box
 	%h2.cufon1 Most Popular
-	.col
-		%h3
-			%a{:href => "#"} Basis of accounting
-		%p.price $45.00
-		%p
-			Category:
-			%a{:href => "#"} Program accounting for non accountants
-	/ /col
-	.col
-		%h3
-			%a{:href => "#"} Analysis and interpretation of financial statements basic
-		%p.price $45.00
-		%p
-			Category:
-			%a{:href => "#"} Program accounting for non accountants
-	/ /col
-	.col
-		%h3
-			%a{:href => "#"} Fundamentals of marketing
-		%p.price $45.00
-		%p
-			Category:
-			%a{:href => "#"} Sales and marketing program in small business
-	/ /col
-	.col
-		%h3
-			%a{:href => "#"} Emotional intelligence
-		%p.price $45.00
-		%p
-			Category:
-			%a{:href => "#"} Emotional intelligence
-	/ /col
+	-unless @popular_courses.empty?
+		-@popular_courses.each do |course|
+			.col
+				%h3
+					%a{:href=>"#"}
+						=course.name
+				%p.price
+					=course.price
+				%p
+					Category:
+					%a{:href => "#"}
+						=course.category
+			/ /col
 	.clr
 		/ 
 / /box
