@@ -33,3 +33,8 @@ gem 'devise', '1.1.5'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :development do
+	gem 'hpricot'
+	gem 'ruby_parser'
+end

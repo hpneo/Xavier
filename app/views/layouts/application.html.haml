@@ -20,12 +20,20 @@
 				%a{:href => root_path}
 					%img{:alt => "ABC - Online Learning Center", :height => "86", :src => "/images/logo_abc.gif", :width => "197"}/
 			%ul#topnav
-				%li.icon.ic-user
-					%a{:href => "#"} Sign In
+				-if user_signed_in?
+					%li.icon.ic-user
+						%a{:href => user_path(current_user)}
+							=current_user.email
+				-else
+					%li.icon.ic-user
+						%a{:href => new_user_session_path} Sign In
 				%li.icon.ic-cart
 					%a{:href => "#"} 0 courses, $0.00
 				%li
 					%a{:href => "#"} Spanish
+				-if user_signed_in?
+					%li
+						%a{:href => destroy_user_session_path} Sign Out
 			/ /topnav
 			.search
 				.inputrow

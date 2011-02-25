@@ -1,0 +1,10 @@
+.box
+	%h3.cufon1
+		User
+	%h2.cufon1
+		User #
+		=@user.id
+	%p
+		-if user_signed_in? && current_user.id==@user.id
+			%a{:href => edit_user_registration_path(@user)} Edit profile
+/ /box
