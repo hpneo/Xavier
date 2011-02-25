@@ -7,4 +7,12 @@ class Product < ActiveRecord::Base
 	def category
 		Category.find(category_id)
 	end
+		
+	def to_param
+		if name
+			"#{id}-#{name}"
+		else
+			super
+		end
+	end
 end
