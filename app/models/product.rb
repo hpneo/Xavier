@@ -5,6 +5,6 @@ class Product < ActiveRecord::Base
 	scope :popular, where(:role => 'course').where('category_id >= 2')
 	
 	def category
-		"Business planning and situational analysis"
+		Category.find(category_id)
 	end
 end

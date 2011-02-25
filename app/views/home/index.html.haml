@@ -28,14 +28,14 @@
 		-@recent_courses.each do |course|
 			.col
 				%h3
-					%a{:href=>"#"}
+					%a{:href => product_path(course)}
 						=course.name
 				%p.price
-					=course.price
+					=number_to_currency(course.price)
 				%p
 					Category:
-					%a{:href => "#"}
-						=course.category
+					%a{:href => category_path(course.category)}
+						=course.category.name
 			/ /col
 	.clr
 		/ 
@@ -46,14 +46,14 @@
 		-@popular_courses.each do |course|
 			.col
 				%h3
-					%a{:href=>"#"}
+					%a{:href => product_path(course)}
 						=course.name
 				%p.price
-					=course.price
+					=number_to_currency(course.price)
 				%p
 					Category:
-					%a{:href => "#"}
-						=course.category
+					%a{:href => category_path(course.category)}
+						=course.category.name
 			/ /col
 	.clr
 		/ 
