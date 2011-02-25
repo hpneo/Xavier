@@ -6,6 +6,8 @@ Xavier::Application.routes.draw do
 	resources :categories
 	resources :products
 	
+	resources :pages
+	
 	root :to => 'home#index'
 	
 end
