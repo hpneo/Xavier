@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/railsdog/searchlogic.git
+  revision: 92487f9773b01d27a350c71d0e12fc0124b866b2
+  specs:
+    rd_searchlogic (3.0.1)
+      activerecord (>= 3.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -87,5 +94,6 @@ DEPENDENCIES
   haml
   hpricot
   rails (= 3.0.4)
+  rd_searchlogic!
   ruby_parser
   sqlite3

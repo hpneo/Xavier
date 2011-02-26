@@ -45,9 +45,10 @@
 						%a{:href => destroy_user_session_path} Sign Out
 			/ /topnav
 			.search
-				.inputrow
-					%input{:id => "", :name => "", :title => "Search courses", :type => "text"}/
-				%input{:id => "", :name => "", :src => "/images/btn_search.gif", :type => "image", :value => "Search"}/
+				-form_tag '/search' do
+					.inputrow
+						=text_field_tag "search"
+					%input{:id => "", :name => "", :src => "/images/btn_search.gif", :type => "image", :value => "Search"}/
 			/ /search
 			%ul#nav
 				%li
@@ -140,9 +141,10 @@
 		/ /content
 		#footer
 			.search
-				.inputrow
-					%input{:id => "", :name => "", :title => "Search courses", :type => "text"}/
-				%input{:id => "", :name => "", :src => "/images/btn_search.gif", :type => "image", :value => "Search"}/
+				-form_tag '/search' do
+					.inputrow
+						=text_field_tag "search"
+					%input{:id => "", :name => "", :src => "/images/btn_search.gif", :type => "image", :value => "Search"}/
 			/ /search
 			.separator
 				/ 

@@ -11,6 +11,8 @@ gem 'haml'
 
 gem 'devise', '1.1.5'
 
+gem 'rd_searchlogic', :require => 'searchlogic', :git => 'git://github.com/railsdog/searchlogic.git'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

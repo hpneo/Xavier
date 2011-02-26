@@ -1,0 +1,15 @@
+.box
+	%h2.cufon1
+		Results for '
+		=params[:search]
+		'
+	-unless @products.empty?
+		-@products.each do |product|
+			%h3.cufon1
+				%a{:href => product_path(product)}
+					=product.name
+			%h4.cufon1
+				=number_to_currency(product.price)
+	-else
+		%h3.cufon1 No results found
+/ /box

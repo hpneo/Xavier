@@ -63,3 +63,7 @@ table.products tbody tr td.name{
 		border-right:#99cbff solid 2px;
 		border-bottom:#99cbff solid 2px;
 	}
+form input{
+	display:inline;
+	width:auto;
+}
