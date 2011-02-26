@@ -28,10 +28,14 @@
 				-else
 					%li.icon.ic-user
 						%a{:href => new_user_session_path} Sign In
-				%li.icon.ic-cart
-					%a{:href => '/cart'}
-						=pluralize(current_user.pending.count, 'course')
-						, $0.00
+				-if user_signed_in?
+					%li.icon.ic-cart
+						%a{:href => '/cart'}
+							=pluralize(current_user.pending.count, 'product')
+							, $0.00
+				-else
+					%li.icon.ic-cart
+						%a{:href => '/cart'} 0 products, $0.00
 				%li
 					%a{:href => "#"} Spanish
 				-if user_signed_in?
