@@ -5,6 +5,7 @@
 			%tr
 				%th Name
 				%th Type
+				%th Purchased
 			%tr
 		%tbody
 			-@products.each do |product|
@@ -13,4 +14,6 @@
 						=product.name
 					%td
 						=product.role
+					%td
+						=product.created_at
 / /box

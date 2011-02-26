@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 	has_many :products, :through => :purchases
 	
 	def pending
-		products.joins(:purchases).where(:purchases =>{:status => "pending" }).all
+		products.joins(:purchases).where(:purchases =>{:status => "pending" })
 	end
 	
 	def paid
