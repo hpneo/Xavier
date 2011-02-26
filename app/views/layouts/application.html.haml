@@ -31,7 +31,7 @@
 				-if user_signed_in?
 					%li.icon.ic-cart
 						%a{:href => '/cart'}
-							=pluralize(current_user.pending.count, 'product')
+							=pluralize(current_user.pending_purchases.count, 'product')
 							, $0.00
 				-else
 					%li.icon.ic-cart

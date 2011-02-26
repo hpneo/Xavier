@@ -8,12 +8,12 @@
 				%th Price
 			%tr
 		%tbody
-			-@products.each do |product|
+			-@purchases.each do |purchase|
 				%tr
 					%td.name
-						=product.name
+						=purchase.product.name
 					%td
-						=product.role
+						=purchase.product.role
 					%td
-						=number_to_currency(product.price)
+						=number_to_currency(purchase.product.price)
 / /box

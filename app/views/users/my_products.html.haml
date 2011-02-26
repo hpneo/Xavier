@@ -4,13 +4,11 @@
 		%thead
 			%tr
 				%th Name
-				%th Type
+				%th Kind
 			%tr
 		%tbody
-			-@products.each do |product|
+			-@purchases.each do |purchase|
 				%tr
-					%td.name
-						=product.name
-					%td
-						=product.role
+					%td.name= purchase.product.name
+					%td= purchase.product.role
 / /box

@@ -7,10 +7,6 @@ class Product < ActiveRecord::Base
 	has_many :purchases
   belongs_to :category
 
-  def self.with_pending_purchases
-    self.
-  end
-
 	def to_param
 		if name
 			"#{id}-#{name.parameterize}"
