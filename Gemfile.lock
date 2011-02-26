@@ -15,6 +15,10 @@ GEM
       rack-mount (~> 0.6.13)
       rack-test (~> 0.5.7)
       tzinfo (~> 0.3.23)
+    activemerchant (1.11.0)
+      activesupport (>= 2.3.8)
+      braintree (>= 2.0.0)
+      builder (>= 2.0.0)
     activemodel (3.0.4)
       activesupport (= 3.0.4)
       builder (~> 2.1.2)
@@ -31,6 +35,8 @@ GEM
     arel (2.0.8)
     bcrypt-ruby (2.1.4)
     bcrypt-ruby (2.1.4-x86-mingw32)
+    braintree (2.8.0)
+      builder
     builder (2.1.2)
     devise (1.1.5)
       bcrypt-ruby (~> 2.1.2)
@@ -92,6 +98,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  activemerchant
   devise (= 1.1.5)
   haml
   hpricot

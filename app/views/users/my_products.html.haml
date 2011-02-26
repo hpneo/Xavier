@@ -9,5 +9,5 @@
 		%tbody
 			-@purchases.each do |purchase|
 				%tr
-					%td.name= purchase.product.name
-					%td= purchase.product.role
+					%td.name= purchase.product.name if purchase.product
+					%td= purchase.product.role if purchase.product

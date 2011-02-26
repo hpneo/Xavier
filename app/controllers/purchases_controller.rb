@@ -16,6 +16,9 @@ class PurchasesController < ApplicationController
 				flash[:success] = "Product purchased successfully"
 				redirect_to '/my_products'
 			end
+		else
+			flash[:error] = @purchase.message
+			redirect_to '/my_products'
 		end
 	end
 	

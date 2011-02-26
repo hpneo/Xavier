@@ -13,4 +13,9 @@ class SearchController < ApplicationController
 		@products = @search.all
 	end
 	
+	def advanced_search
+		@search = Product.search(params[:advanced_search])
+		@products = @search.all
+	end
+	
 end

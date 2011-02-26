@@ -14,6 +14,8 @@ gem 'devise', '1.1.5'
 gem 'meta_where'
 gem 'meta_search'
 
+gem 'activemerchant'
+
 #gem 'rd_searchlogic', :require => 'searchlogic', :git => 'git://github.com/railsdog/searchlogic.git'
 
 # Use unicorn as the web server

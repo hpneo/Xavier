@@ -1,17 +1,6 @@
 .box
 	%h2.cufon1
 		Results
-	-form_tag '/search' do
-		%p
-			=label_tag "Name:"
-			=text_field_tag :name_contains, params[:name_contains]
-		%p
-			=label_tag "Summary:"
-			=text_field_tag :summary_contains, params[:summary_contains]
-		%p
-			=label_tag "Category:"
-			=text_field_tag :category_name_contains, params[:category_name_contains]
-		%input{:id => "", :name => "", :src => "/images/btn_search.gif", :type => "image", :value => "Search"}/
 	
 	-unless @products.empty?
 		-@products.each do |product|
@@ -22,4 +11,6 @@
 				=number_to_currency(product.price)
 	-else
 		%h3.cufon1 No results found
+	%a{:href => '/advanced_search'}
+		Refine your search results by using the advance filters
 / /box

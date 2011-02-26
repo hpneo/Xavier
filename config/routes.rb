@@ -16,6 +16,7 @@ Xavier::Application.routes.draw do
 	match '/cart' => 'purchases#cart'
 	match '/my_products' => 'users#my_products'
 	match '/search' => 'search#search'
+	match '/advanced_search' => 'search#advanced_search'
 	
 	root :to => 'home#index'
 	
