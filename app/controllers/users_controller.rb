@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	
 	def my_products
-		@products = current_user.paid
+		@purchases = current_user.paid_purchases
 	end
 	
 	def show

@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 	
 	def add_to_cart
 		@product = Product.find(params[:product_id])
-		@purchase = @product.purchases.build :user_id => current_user.id, :status => 'pending'	
+		@purchase = @product.purchases.build :user_id => current_user.id, :status => 'pending'
 		
 		if @purchase.save
 			redirect_to '/cart'
@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
 	
 	def purchase
 		@product = Product.find(params[:product_id])
-    	@purchase = @product.purchases.create
+    	@purchase = @product.purchases.build
 	end
 	
 end

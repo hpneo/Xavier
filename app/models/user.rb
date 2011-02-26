@@ -10,11 +10,11 @@ class User < ActiveRecord::Base
 	has_many :purchases, :dependent => :destroy
 	has_many :products, :through => :purchases
 	
-	def pending
-		products.joins(:purchases).where(:purchases =>{:status => "pending" })
+	def pending_purchases
+    purchases.pending
 	end
 	
-	def paid
-		products.joins(:purchases).where(:purchases =>{:status => "paid" })
+	def paid_purchases
+		purchases.paid
 	end
 end
