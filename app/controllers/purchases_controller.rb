@@ -3,7 +3,7 @@ class PurchasesController < ApplicationController
 	before_filter :authenticate_user!
 	
 	def cart
-		@products = current_user.pending
+		@products = current_user.pending_purchases
 	end
 	
 	def create
