@@ -56,7 +56,7 @@ table.products tbody tr td.name{
 		border-right:#fff770 solid 2px;
 		border-bottom:#fff770 solid 2px;
 	}
-	.flash.message{
+	.flash.notice{
 		background:#e0efff;
 		border-top:#c1e0ff solid 2px;
 		border-left:#c1e0ff solid 2px;
