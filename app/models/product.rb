@@ -5,11 +5,8 @@ class Product < ActiveRecord::Base
 	scope :popular, where(:role => 'course').where('category_id >= 2')
 	
 	has_many :purchases
-	
-	def category
-		Category.find(category_id)
-	end
-		
+  belongs_to :category
+
 	def to_param
 		if name
 			"#{id}-#{name.parameterize}"
