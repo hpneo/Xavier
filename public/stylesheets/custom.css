@@ -67,3 +67,6 @@ form input{
 	display:inline;
 	width:auto;
 }
+.highlight{
+	color:red;
+}

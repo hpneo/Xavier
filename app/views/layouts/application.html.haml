@@ -47,7 +47,7 @@
 			.search
 				-form_tag '/search' do
 					.inputrow
-						=text_field_tag "search"
+						=text_field_tag "search[name_or_category_name_or_summary_contains]", @search_term
 					%input{:id => "", :name => "", :src => "/images/btn_search.gif", :type => "image", :value => "Search"}/
 			/ /search
 			%ul#nav
@@ -143,7 +143,7 @@
 			.search
 				-form_tag '/search' do
 					.inputrow
-						=text_field_tag "search"
+						=text_field_tag "search[name_or_category_name_or_summary_contains]", @search_term
 					%input{:id => "", :name => "", :src => "/images/btn_search.gif", :type => "image", :value => "Search"}/
 			/ /search
 			.separator
