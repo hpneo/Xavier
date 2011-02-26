@@ -8,6 +8,7 @@ Xavier::Application.routes.draw do
 	resources :categories
 	resources :products	do
 		get :purchase
+		get :add_to_cart
 	end
 	
 	resources :pages

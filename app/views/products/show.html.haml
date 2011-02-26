@@ -5,6 +5,7 @@
 		Price:
 		=number_to_currency(@product.price)
 	%a.button{:href => product_purchase_path(@product)}
-		Purchase
-		=@product.role.capitalize
+		Express checkout
+	%a.button{:href => product_add_to_cart_path(@product)}
+		Add to cart
 / /box

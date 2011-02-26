@@ -6,13 +6,17 @@
 		=@product.name
 	=form_for(@purchase) do |f|
 		%p
-			=f.label :credit_number
+			=f.label :credit_card_number
 			%br/
-			=f.text_field :credit_number
+			=f.text_field :credit_card_number
 		%p
-			=f.label :secret
+			=f.label :expiration_date
 			%br/
-			=f.text_field :secret
+			=f.text_field :expiration_date
+		%p
+			=f.label :csc_code
+			%br/
+			=f.text_field :csc_code
 		%p
 			=f.hidden_field :product_id
 		%p

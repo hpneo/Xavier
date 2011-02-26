@@ -1,6 +1,6 @@
 class Purchase < ActiveRecord::Base
 	
-	attr_accessor :credit_number, :secret
+	attr_accessor :credit_card_number, :expiration_date, :csc_code
 	
 	belongs_to :product
 	belongs_to :user
