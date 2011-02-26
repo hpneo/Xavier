@@ -1,0 +1,65 @@
+a.button{
+	font-size:14px;
+	display:inline-block;
+	background:#10ad00;
+	color:#fefefe;
+	padding:10px 20px;
+	margin:10px;
+	border-top:#13cc00 solid 2px;
+	border-left:#13cc00 solid 2px;
+	border-right:#0d8e00 solid 2px;
+	border-bottom:#0d8e00 solid 2px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+}
+a.button:hover{
+	background:#12c100;
+	text-decoration:none;
+}
+table.products{
+	width:70%;
+}
+table.products thead{
+	background:black;
+	color:white;
+	font-size:13px;
+	text-transform:uppercase;
+}
+table.products thead th{
+	padding:4px 8px;
+}
+table.products tbody tr:hover{
+	background:#dddddd;
+}
+table.products tbody tr td{
+	padding:3px 6px;
+}
+table.products tbody tr td.name{
+	width:70%;
+}
+.flash{
+		display:block;
+		padding:4px;
+		margin:2px 0;
+	}
+	.flash.success{
+		background:#99ff8e;
+		border-top:#abfea3 solid 2px;
+		border-left:#abfea3 solid 2px;
+		border-right:#86ff7a solid 2px;
+		border-bottom:#86ff7a solid 2px;
+	}
+	.flash.warning{
+		background:#fff884;
+		border-top:#fefaad solid 2px;
+		border-left:#fefaad solid 2px;
+		border-right:#fff770 solid 2px;
+		border-bottom:#fff770 solid 2px;
+	}
+	.flash.message{
+		background:#e0efff;
+		border-top:#c1e0ff solid 2px;
+		border-left:#c1e0ff solid 2px;
+		border-right:#99cbff solid 2px;
+		border-bottom:#99cbff solid 2px;
+	}

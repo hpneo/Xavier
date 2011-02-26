@@ -1,0 +1,16 @@
+.box
+	%h2.cufon1 My products
+	%table.products
+		%thead
+			%tr
+				%th Name
+				%th Type
+			%tr
+		%tbody
+			-@products.each do |product|
+				%tr
+					%td.name
+						=product.name
+					%td
+						=product.type
+/ /box

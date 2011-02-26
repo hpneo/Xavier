@@ -18,6 +18,7 @@ purchase:
 -user
 -product
 -date
+-state
 
 pages:
 -title
@@ -26,4 +27,3 @@ pages:
 payment:
 -purchase
 -payment_type
--state

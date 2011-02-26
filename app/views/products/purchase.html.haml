@@ -1,0 +1,20 @@
+.box
+	%h2
+		Purchase
+		=@product.role
+		\:
+		=@product.name
+	=form_for(@purchase) do |f|
+		%p
+			=f.label :credit_number
+			%br/
+			=f.text_field :credit_number
+		%p
+			=f.label :secret
+			%br/
+			=f.text_field :secret
+		%p
+			=f.hidden_field :product_id
+		%p
+			=f.submit "Purchase"
+/ /box

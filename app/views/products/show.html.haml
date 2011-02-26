@@ -1,9 +1,10 @@
 .box
-	%h3.cufon1
-		=@product.role.capitalize
 	%h2.cufon1
 		=@product.name
 	%h3.cufon1
 		Price:
 		=number_to_currency(@product.price)
+	%a.button{:href => product_purchase_path(@product)}
+		Purchase
+		=@product.role.capitalize
 / /box

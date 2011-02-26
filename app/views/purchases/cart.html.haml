@@ -1,0 +1,19 @@
+.box
+	%h2.cufon1 My cart
+	%table.products
+		%thead
+			%tr
+				%th Name
+				%th Type
+				%th Price
+			%tr
+		%tbody
+			-@products.each do |product|
+				%tr
+					%td.name
+						=product.name
+					%td
+						=product.type
+					%td
+						=number_to_currency(product.price)
+/ /box
