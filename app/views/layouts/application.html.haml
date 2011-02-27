@@ -43,6 +43,9 @@
 						%a{:href => '/my_products'} My products
 					%li
 						%a{:href => destroy_user_session_path} Sign Out
+					-if current_user.is_admin?
+						%li
+							%a{:href => admin_root_path} Admin
 			/ /topnav
 			.search
 				-form_tag '/search' do
@@ -52,7 +55,7 @@
 			/ /search
 			%ul#nav
 				%li
-					%a.current{:href => "#"}
+					%a.current{:href => root_path}
 						%span Home
 				%li
 					%a{:href => "#"}

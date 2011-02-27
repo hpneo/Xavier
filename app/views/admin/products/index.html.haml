@@ -1,0 +1,20 @@
+.box
+	%h2.cufon1 Products
+	%table.products
+		%thead
+			%tr
+				%th Name
+				%th Kind
+				%th Price
+				%th{:colspan => 2} Actions
+			%tr
+		%tbody
+			-@products.each do |product|
+				%tr
+					%td.name= product.name
+					%td= product.role
+					%td= number_to_currency(product.price)
+					%td
+						=link_to 'Edit', edit_admin_product_path(product)
+					%td
+						=link_to 'Delete', product, :method => :delete, :confirm => "You sure?"

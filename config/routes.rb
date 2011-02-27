@@ -20,4 +20,12 @@ Xavier::Application.routes.draw do
 	
 	root :to => 'home#index'
 	
+	namespace :admin do
+		root :to => 'home#index'
+		resources :pages
+		resources :categories
+		resources :products
+		resources :users
+	end
+	
 end

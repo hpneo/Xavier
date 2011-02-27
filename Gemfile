@@ -16,6 +16,8 @@ gem 'meta_search'
 
 gem 'activemerchant'
 
+gem 'inherited_resources', '~> 1.2.1'
+
 #gem 'rd_searchlogic', :require => 'searchlogic', :git => 'git://github.com/railsdog/searchlogic.git'
 
 # Use unicorn as the web server
