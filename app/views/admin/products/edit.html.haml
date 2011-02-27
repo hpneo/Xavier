@@ -1,0 +1,21 @@
+.box
+	%h2.cufon1
+		Edit Product: '
+		=@product.name
+		'
+	-form_for([:admin, @product]) do |f|
+		=render 'layouts/error_messages', :object => f.object
+		%p.fields
+			=f.label :name
+			=f.text_field :name
+		%p.fields
+			=f.label :summary
+			=f.text_area :summary
+		%p.fields
+			=f.label :price
+			=f.text_field :price
+		%p.fields
+			=f.label :role
+			=f.text_field :role
+		%p.actions
+			=f.submit "Edit"

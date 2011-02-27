@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 		purchases.paid
 	end
 	
-	def is_admin?
-		role=='admin'
+	def admin?
+		role == 'admin'
 	end
 end

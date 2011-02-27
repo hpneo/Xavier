@@ -43,96 +43,94 @@
 						%a{:href => '/my_products'} My products
 					%li
 						%a{:href => destroy_user_session_path} Sign Out
-					-if current_user.is_admin?
+					-if current_user.admin?
 						%li
 							%a{:href => admin_root_path} Admin
 			/ /topnav
-			.search
-				-form_tag '/search' do
-					.inputrow
-						=text_field_tag "search[name_or_category_name_or_summary_contains]", @search_term
-					%input{:id => "", :name => "", :src => "/images/btn_search.gif", :type => "image", :value => "Search"}/
-			/ /search
+			=render :partial => 'layouts/search_form'
 			%ul#nav
-				%li
-					%a.current{:href => root_path}
-						%span Home
-				%li
-					%a{:href => "#"}
-						%span
-							Find Courses
-							%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
-					%ul
-						%li
-							%a{:href => '/advanced_search'} Advanced Search
-						%li
-							%a{:href => "#"} What’s New
-						%li
-							%a{:href => "#"} Best Sellers
-						%li
-							%a{:href => "#"} Tags
-						%li
-							%a{:href => "#"} Categories
-				%li
-					%a{:href => "#"}
-						%span
-							Products
-							%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
-					%ul
-						%li
-							%a{:href => "#"} Our Courses
-						%li
-							%a{:href => "#"} Class Member
-						%li
-							%a{:href => "#"} Agency
-						%li
-							%a{:href => "#"} iPad / iPhone
-						%li
-							%a{:href => "#"} DVDs
-						%li
-							%a{:href => "#"} Give a gift
-						%li
-							%a{:href => "#"} Free courses
-				%li
-					%a{:href => "#"}
-						%span
-							News
-							%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
-					%ul
-						%li
-							%a{:href => "#"} Newsletter
-						%li
-							%a{:href => "#"} Press Releases
-						%li
-							%a{:href => "#"} Media
-						%li
-							%a{:href => "#"} Events
-				%li
-					%a{:href => "#"}
-						%span
-							About Us
-							%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
-					%ul
-						%li
-							%a{:href => "#"} ABC e-learning Story
-						%li
-							%a{:href => "#"} Executive Team
-						%li
-							%a{:href => "#"} Partnership
-						%li
-							%a{:href => "#"} Careers
-				%li
-					%a{:href => "#"}
-						%span
-							Support
-							%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
-					%ul
-						%li
-							%a{:href => "#"} Frequently asked Question
-						%li
-							%a{:href => "#"} Contact us
-						%li
-							%a{:href => "#"} System Requirements
+				-if user_signed_in? && current_user.admin?
+					=render :partial => 'admin/home/nav'
+				-else
+					%li
+						%a.current{:href => root_path}
+							%span Home
+					%li
+						%a{:href => "#"}
+							%span
+								Find Courses
+								%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
+						%ul
+							%li
+								%a{:href => '/advanced_search'} Advanced Search
+							%li
+								%a{:href => "#"} What’s New
+							%li
+								%a{:href => "#"} Best Sellers
+							%li
+								%a{:href => "#"} Tags
+							%li
+								%a{:href => "#"} Categories
+					%li
+						%a{:href => "#"}
+							%span
+								Products
+								%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
+						%ul
+							%li
+								%a{:href => "#"} Our Courses
+							%li
+								%a{:href => "#"} Class Member
+							%li
+								%a{:href => "#"} Agency
+							%li
+								%a{:href => "#"} iPad / iPhone
+							%li
+								%a{:href => "#"} DVDs
+							%li
+								%a{:href => "#"} Give a gift
+							%li
+								%a{:href => "#"} Free courses
+					%li
+						%a{:href => "#"}
+							%span
+								News
+								%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
+						%ul
+							%li
+								%a{:href => "#"} Newsletter
+							%li
+								%a{:href => "#"} Press Releases
+							%li
+								%a{:href => "#"} Media
+							%li
+								%a{:href => "#"} Events
+					%li
+						%a{:href => "#"}
+							%span
+								About Us
+								%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
+						%ul
+							%li
+								%a{:href => "#"} ABC e-learning Story
+							%li
+								%a{:href => "#"} Executive Team
+							%li
+								%a{:href => "#"} Partnership
+							%li
+								%a{:href => "#"} Careers
+					%li
+						%a{:href => "#"}
+							%span
+								Support
+								%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
+						%ul
+							%li
+								%a{:href => "#"} Frequently asked Question
+							%li
+								%a{:href => "#"} Contact us
+							%li
+								%a{:href => "#"} System Requirements
 			/ /main-nav
 		/ /wrapper
 	/ /header
@@ -143,12 +141,7 @@
 			=yield
 		/ /content
 		#footer
-			.search
-				-form_tag '/search' do
-					.inputrow
-						=text_field_tag "search[name_or_category_name_or_summary_contains]", @search_term
-					%input{:id => "", :name => "", :src => "/images/btn_search.gif", :type => "image", :value => "Search"}/
-			/ /search
+			=render :partial => 'layouts/search_form'
 			.separator
 				/ 
 			#footnav

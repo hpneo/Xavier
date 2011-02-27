@@ -1,0 +1,12 @@
+.box
+	%h2.cufon1
+		Edit Category: '
+		=@category.name
+		'
+	-form_for([:admin, @category]) do |f|
+		=render 'layouts/error_messages', :object => f.object
+		%p.fields
+			=f.label :name
+			=f.text_field :name
+		%p.actions
+			=f.submit "Edit"
