@@ -6,6 +6,22 @@ class Admin::CategoriesController < ApplicationController
 		@categories = Category.all
 	end
 	
+	def new
+		@category = Category.new
+	end
+	
+	def create
+		@category = Category.new(params[:category])
+		
+		if @category.save
+			flash[:success] = "Category created successfully"
+		else
+			flash[:error] = "Error"
+		end
+		
+		redirect_to admin_categories_path
+	end
+	
 	def edit
 		@category = Category.find(params[:id])
 	end

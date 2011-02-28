@@ -3,13 +3,33 @@
 		%span Home
 %li
 	%a{:href => admin_pages_path, :class => nav_class(admin_pages_path)}
-		%span Pages
+		%span
+			Pages
+			%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
+	%ul
+		%li
+			%a{:href => new_admin_page_path} Add page
 %li
 	%a{:href => admin_users_path, :class => nav_class(admin_users_path)}
-		%span Users
+		%span
+			Users
+			%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
+	%ul
+		%li
+			%a{:href => new_admin_user_path} Add user
 %li
 	%a{:href => admin_categories_path, :class => nav_class(admin_categories_path)}
-		%span Categories
+		%span
+			Categories
+			%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
+	%ul
+		%li
+			%a{:href => new_admin_category_path} Add category
 %li
 	%a{:href => admin_products_path, :class => nav_class(admin_products_path)}
-		%span Products
+		%span
+			Products
+			%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
+	%ul
+		%li
+			%a{:href => new_admin_product_path} Add product

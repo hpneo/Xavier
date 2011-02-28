@@ -1,8 +1,6 @@
 .box
 	%h2.cufon1
-		Edit Product: '
-		=@product.name
-		'
+		Add Product:
 	-form_for([:admin, @product]) do |f|
 		=render 'layouts/error_messages', :object => f.object
 		%p.fields
@@ -21,4 +19,4 @@
 			=f.label :category_id
 			=collection_select(:product, :category_id, Category.all, :id, :name)
 		%p.actions
-			=f.submit "Edit"
+			=f.submit "Add"

@@ -1,0 +1,13 @@
+.box
+	%h2.cufon1
+		Add Page:
+	-form_for([:admin, @page]) do |f|
+		=render 'layouts/error_messages', :object => f.object
+		%p.fields
+			=f.label :title
+			=f.text_field :title
+		%p.fields
+			=f.label :content
+			=f.text_area :content
+		%p.actions
+			=f.submit "Add"

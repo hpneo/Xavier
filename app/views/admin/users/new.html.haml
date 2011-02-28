@@ -1,0 +1,20 @@
+.box
+	%h2.cufon1
+		Add User:
+		=@user.email
+	-form_for([:admin, @user]) do |f|
+		=render 'layouts/error_messages', :object => f.object
+		%p.fields
+			=f.label :first_name
+			=f.text_field :first_name
+		%p.fields
+			=f.label :last_name
+			=f.text_field :last_name
+		%p.fields
+			=f.label :email
+			=f.text_field :email
+		%p.fields
+			=f.label :password
+			=f.password_field :password
+		%p.actions
+			=f.submit "Add"

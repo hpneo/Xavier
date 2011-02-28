@@ -6,6 +6,22 @@ class Admin::ProductsController < ApplicationController
 		@products = Product.all
 	end
 	
+	def new
+		@product = Product.new
+	end
+	
+	def create
+		@product = Product.new(params[:product])
+		
+		if @product.save
+			flash[:success] = "Product added successfully"
+		else
+			flash[:error] = "Error"
+		end
+		
+		redirect_to admin_products_path
+	end
+	
 	def edit
 		@product = Product.find(params[:id])
 	end

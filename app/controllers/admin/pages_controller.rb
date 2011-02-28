@@ -6,6 +6,22 @@ class Admin::PagesController < ApplicationController
 		@pages = Page.all
 	end
 	
+	def new
+		@page = Page.new
+	end
+	
+	def create
+		@page = Page.new(params[:page])
+		
+		if @page.save
+			flash[:success] = "Page created successfully"
+		else
+			flash[:error] = "Error"
+		end
+		
+		redirect_to admin_pages_path
+	end
+	
 	def edit
 		@page = Page.find(params[:id])
 	end
