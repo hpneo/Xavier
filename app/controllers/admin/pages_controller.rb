@@ -14,11 +14,23 @@ class Admin::PagesController < ApplicationController
 		@page = Page.find(params[:id])
 		
 		if @page.update_attributes(params[:page])
-	  		flash[:success] = "Page updated"
+	  		flash[:success] = "Page updated, #{undo_link}"
 	  		redirect_to admin_pages_path
 	  	else
 	  		render 'edit'
 	  	end
 	end
 	
+	def destroy
+		@page = Page.find(params[:id])
+		if @page.destroy
+			flash[:success] = "Page destroyed, #{undo_link}"
+		end
+  		redirect_to admin_pages_path
+	end
+	
+	private
+		def undo_link
+			view_context.link_to("undo", revert_version_path(@page.versions.scoped.last), :method => :post)
+		end
 end

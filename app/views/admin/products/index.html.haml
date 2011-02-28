@@ -17,4 +17,4 @@
 					%td
 						=link_to 'Edit', edit_admin_product_path(product)
 					%td
-						=link_to 'Delete', product, :method => :delete, :confirm => "You sure?"
+						=link_to 'Delete', [:admin, product], :method => :delete, :confirm => "You sure?"

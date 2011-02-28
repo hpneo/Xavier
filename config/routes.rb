@@ -28,4 +28,6 @@ Xavier::Application.routes.draw do
 		resources :users
 	end
 	
+	post "versions/:id/revert" => "versions#revert", :as => "revert_version"
+	
 end

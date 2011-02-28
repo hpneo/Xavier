@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 	has_many :products, :through => :purchases
 	
 	def pending_purchases
-    purchases.pending
+    	purchases.pending
 	end
 	
 	def paid_purchases

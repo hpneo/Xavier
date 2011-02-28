@@ -8,10 +8,12 @@ class Product < ActiveRecord::Base
 	belongs_to :category
 	
 	validates :name, :presence => true
-	validates :summary, :presence => true
+	#validates :summary, :presence => true
 	validates :price, :presence => true, :numericality => true
 	validates :role, :presence => true
 	validates :category_id, :presence => true
+	
+	has_paper_trail
 
 	def to_param
 		if name

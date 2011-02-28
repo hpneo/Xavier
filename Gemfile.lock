@@ -65,6 +65,8 @@ GEM
       activesupport (~> 3.0.4)
       arel (~> 2.0.8)
     mime-types (1.16)
+    paper_trail (2.0.1)
+      rails (~> 3)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -110,6 +112,7 @@ DEPENDENCIES
   inherited_resources (~> 1.2.1)
   meta_search
   meta_where
+  paper_trail
   rails (= 3.0.4)
   ruby_parser
   sqlite3

@@ -137,7 +137,7 @@
 	.wrapper
 		#content
 			-flash.each do |key, value|
-				=content_tag(:div, value, :class=> "flash #{key}")
+				=content_tag(:div, raw(value), :class=> "flash #{key}")
 			=yield
 		/ /content
 		#footer
@@ -149,11 +149,11 @@
 					%li
 						%strong Why choose us?
 					%li
-						%a{:href => page_path(Page.find(1))} Benefits
+						%a{:href => '#'} Benefits
 					%li
 						%a{:href => "#"} Membership
 					%li
-						%a{:href => page_path(Page.find(2))} Testimonials
+						%a{:href => '#'} Testimonials
 				%ul
 					%li
 						%strong About Us

@@ -14,11 +14,23 @@ class Admin::ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 		
 		if @product.update_attributes(params[:product])
-	  		flash[:success] = "Product updated"
+	  		flash[:success] = "Product updated, #{undo_link}"
 	  		redirect_to admin_products_path
 	  	else
 	  		render 'edit'
 	  	end
 	end
 	
+	def destroy
+		@product = Product.find(params[:id])
+		if @product.destroy
+			flash[:success] = "Product destroyed, #{undo_link}"
+		end
+  		redirect_to admin_products_path
+	end
+	
+	private
+		def undo_link
+			view_context.link_to("undo", revert_version_path(@product.versions.scoped.last), :method => :post)
+		end
 end
