@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110228204619) do
+ActiveRecord::Schema.define(:version => 20110301161337) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(:version => 20110228204619) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "product_files", :force => true do |t|
+    t.string   "source_file_name"
+    t.string   "source_content_type"
+    t.integer  "source_file_size"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "product_files", ["product_id"], :name => "index_product_files_on_product_id"
 
   create_table "products", :force => true do |t|
     t.string   "name"

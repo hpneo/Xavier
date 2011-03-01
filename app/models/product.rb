@@ -14,7 +14,15 @@ class Product < ActiveRecord::Base
 	validates :category_id, :presence => true
 	
 	has_paper_trail
-
+	
+	has_many :product_files
+	
+	attr_accessor :product_file
+	
+	def file
+		ProductFile.where(:product_id => self.id).last.source
+	end
+	
 	def to_param
 		if name
 			"#{id}-#{name.parameterize}"

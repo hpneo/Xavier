@@ -3,7 +3,7 @@
 		Edit Product: '
 		=@product.name
 		'
-	-form_for([:admin, @product]) do |f|
+	-form_for([:admin, @product], :html => {:multipart => true}) do |f|
 		=render 'layouts/error_messages', :object => f.object
 		%p.fields
 			=f.label :name
@@ -20,5 +20,7 @@
 		%p.fields
 			=f.label :category_id
 			=collection_select(:product, :category_id, Category.all, :id, :name)
+		%p.fields
+			=f.file_field 'product_file[source]'
 		%p.actions
 			=f.submit "Edit"
