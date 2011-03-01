@@ -14,14 +14,18 @@ class Admin::ProductsController < ApplicationController
 		@product = Product.new(params[:product])
 		
 		if @product.save
-			@product_file = ProductFile.new(params[:product][:product_file])
-			@product_file.product_id = @product.id
-			
-			if @product_file.save
-				flash[:success] = "Product added successfully"
-			else
-				flash[:error] = "Error at uploading file"
-			end
+  			flash[:success] = "Product added"
+  			
+			if params[:product][:product_file]
+				@product_file = ProductFile.new(params[:product][:product_file])
+				@product_file.product_id = @product.id
+				
+				if @product_file.save
+		  			flash[:success] = "Product file uploaded"
+	  			else
+	  				flash[:error] = "Error at uploading file"
+	  			end
+  			end
 		else
 			flash[:error] = "Error at adding product"
 		end
@@ -37,14 +41,19 @@ class Admin::ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 		
 		if @product.update_attributes(params[:product])
-			@product_file = ProductFile.new(params[:product][:product_file])
-			@product_file.product_id = @product.id
+  			flash[:success] = "Product updated, #{undo_link}"
 			
-			if @product_file.save
-	  			flash[:success] = "Product updated, #{undo_link}"
-  			else
-  				flash[:error] = "Error at uploading file, #{undo_link}"
+			if params[:product][:product_file]
+				@product_file = ProductFile.new(params[:product][:product_file])
+				@product_file.product_id = @product.id
+				
+				if @product_file.save
+		  			flash[:success] = "Product file uploaded"
+	  			else
+	  				flash[:error] = "Error at uploading file"
+	  			end
   			end
+  			
 	  		redirect_to admin_products_path
 	  	else
 	  		render 'edit'
