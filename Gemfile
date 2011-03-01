@@ -18,6 +18,8 @@ gem 'activemerchant'
 
 gem 'inherited_resources', '~> 1.2.1'
 
+gem 'aws-s3'
+
 gem 'paper_trail'
 
 gem "paperclip", "~> 2.3"
