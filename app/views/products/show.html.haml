@@ -4,8 +4,9 @@
 	%h3.cufon1
 		Price:
 		=number_to_currency(@product.price)
-	%a.button{:href => @product.file.url}
-		Download
+	-if @product.file
+		%a.button{:href => @product.file.url}
+			Download
 	%a.button{:href => product_purchase_path(@product)}
 		Express checkout
 	%a.button{:href => product_add_to_cart_path(@product)}
