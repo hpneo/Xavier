@@ -23,7 +23,7 @@ class Admin::ProductsController < ApplicationController
 				flash[:error] = "Error at uploading file"
 			end
 		else
-			flash[:error] = "Error"
+			flash[:error] = "Error at adding product"
 		end
 		
 		redirect_to admin_products_path

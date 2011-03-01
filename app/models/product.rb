@@ -20,7 +20,12 @@ class Product < ActiveRecord::Base
 	attr_accessor :product_file
 	
 	def file
-		ProductFile.where(:product_id => self.id).last.source
+		file = ProductFile.where(:product_id => self.id).last
+		if file
+			file.source
+		else
+			nil
+		end
 	end
 	
 	def to_param
