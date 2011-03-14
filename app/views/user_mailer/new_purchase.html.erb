@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Hello, <%= @user.first_name %></h1>
+    <p>
+      You have successfully purchased "<%= @purchase.product.name %>".
+    </p>
+    <p>
+      To download your product, visit <a href="<%= @purchase.product.file.url %>"><%= @purchase.product.file.url %></a>.
+    </p>
+  </body>
+</html>

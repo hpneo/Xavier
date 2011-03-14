@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
 	def admin?
 		role == 'admin'
 	end
+	
+	def purchased?(product)
+		Purchase.where({:product_id => product.id, :status => "paid", :user_id => id}).present?
+	end
 end

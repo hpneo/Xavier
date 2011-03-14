@@ -9,11 +9,12 @@
 			%tr
 		%tbody
 			-@purchases.each do |purchase|
-				%tr
-					%td.name
-						=purchase.product.name
-					%td
-						=purchase.product.role
-					%td
-						=number_to_currency(purchase.product.price)
+				-if purchase.product
+					%tr
+						%td.name
+							=purchase.product.name
+						%td
+							=purchase.product.role
+						%td
+							=number_to_currency(purchase.product.price)
 / /box

@@ -13,6 +13,7 @@ class PurchasesController < ApplicationController
 		
 		if @purchase.purchase_valid?
 			if @purchase.save
+				UserMailer.new_purchase(current_user, @purchase).deliver
 				flash[:success] = "Product purchased successfully"
 				redirect_to '/my_products'
 			end
