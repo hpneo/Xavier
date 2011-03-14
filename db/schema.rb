@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110301161337) do
+ActiveRecord::Schema.define(:version => 20110314174137) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(:version => 20110301161337) do
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prints", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_file_size"
+    t.string   "image_content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -88,5 +96,13 @@ ActiveRecord::Schema.define(:version => 20110301161337) do
   end
 
   add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
+
+  create_table "videos", :force => true do |t|
+    t.string   "original_file_name"
+    t.string   "original_file_size"
+    t.string   "original_content_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
