@@ -5,4 +5,8 @@ class HomeController < ApplicationController
 		@popular_courses = Product.courses.popular
 	end
 	
+	def language
+	 
+	end
+	
 end

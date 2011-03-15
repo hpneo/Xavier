@@ -1,6 +1,6 @@
 .box
 	%h2.cufon1
-		Edit Page: '
+		Editing Page: '
 		=@page.title
 		'
 	-form_for([:admin, @page]) do |f|
@@ -11,5 +11,9 @@
 		%p.fields
 			=f.label :content
 			=f.text_area :content, :class => "mceEditor"
+		%p.fields
+			=f.label :other_content, "Spanish content"
+			=f.text_area :other_content, :class => "mceEditor"
+
 		%p.actions
 			=f.submit "Edit"

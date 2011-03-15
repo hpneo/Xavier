@@ -1,13 +1,20 @@
 .box
 	%h2.cufon1
-		Add Page:
+		Adding Page:
 	-form_for([:admin, @page]) do |f|
 		=render 'layouts/error_messages', :object => f.object
 		%p.fields
 			=f.label :title
 			=f.text_field :title
 		%p.fields
+			=f.label :locale
+			=collection_select(:product, :locale, Page::LOCALES, :first, :last)
+		%p.fields
 			=f.label :content
 			=f.text_area :content, :class => "mceEditor"
+		%p.fields
+			=f.label :other_content, "Spanish content"
+			=f.text_area :other_content, :class => "mceEditor"
+			
 		%p.actions
 			=f.submit "Add"

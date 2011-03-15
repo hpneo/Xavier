@@ -4,7 +4,8 @@ class Page < ActiveRecord::Base
 	validates :content, :presence => true
 	
 	has_paper_trail
-	
+	LOCALES = {:es => "Español", :en => "English"}
+		
 	def to_param
 		if title
 			"#{id}-#{title.parameterize}"
