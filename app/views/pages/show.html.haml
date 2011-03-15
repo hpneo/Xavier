@@ -1,5 +1,8 @@
 .box
 	%h2.cufon1
 		=@page.title
-	=raw render :text => @page.content
+	- if session[:language] && session[:language] = "es"
+		=raw render :text => @page.other_content
+	- else
+		=raw render :text => @page.content
 / /box
