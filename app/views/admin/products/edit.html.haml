@@ -16,7 +16,7 @@
 			=f.text_field :price
 		%p.fields
 			=f.label :role
-			=f.text_field :role
+			=collection_select(:product, :role, Product::ROLES, :first, :last)
 		%p.fields
 			=f.label :category_id
 			=collection_select(:product, :category_id, Category.all, :id, :name)
