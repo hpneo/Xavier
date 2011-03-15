@@ -15,6 +15,9 @@
 			=f.label :price
 			=f.text_field :price
 		%p.fields
+			=f.label :price, "Or mark it free"
+			=f.text_field :free			
+		%p.fields
 			=f.label :role
 			=collection_select(:product, :role, Product::ROLES, :first, :last)
 		%p.fields
