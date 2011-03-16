@@ -4,7 +4,7 @@
 	%h3.cufon1
 		Price:
 		=number_to_currency(@product.price)
-	-if current_user && current_user.purchased?(@product)
+	-if current_user && (current_user.purchased?(@product) || @product.free?)
 		-if @product.file
 			%a.button{:href => @product.file.url}
 				Download
