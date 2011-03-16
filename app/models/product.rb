@@ -10,7 +10,7 @@ class Product < ActiveRecord::Base
 	
 	validates :name, :presence => true
 	#validates :summary, :presence => true
-	validates :price, :presence => true, :numericality => true
+  # validates :price, :presence => true, :numericality => true
 	validates :role, :presence => true
 	validates :category_id, :presence => true
 	
