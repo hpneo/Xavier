@@ -7,7 +7,7 @@ class ProductFile < ActiveRecord::Base
 		:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
 		:path => '/:attachment/:id/:filename'
 	
-	validates_attachment_presence :source
-	validates_attachment_content_type :source, :content_type => ['application/zip', 'application/x-gzip', 'application/pdf']
+  # validates_attachment_presence :source
+  # validates_attachment_content_type :source, :content_type => ['application/zip', 'application/x-gzip', 'application/pdf']
 	
 end
