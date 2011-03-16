@@ -40,7 +40,7 @@
 					%li.icon.ic-cart
 						%a{:href => '/cart'} 0 products, $0.00
 				%li
-					- if session[:language] == "es"
+					- if session[:language] && session[:language] == "es"
 						%a{:href => "/change_language?lang=en"} English
 					- else
 						%a{:href => "/change_language?lang=es"} Spanish
