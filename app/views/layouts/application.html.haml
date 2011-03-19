@@ -30,7 +30,8 @@
 							=current_user.email
 				-else
 					%li.icon.ic-user
-						%a{:href => new_user_session_path} Sign In
+						%a{:href => new_user_session_path}
+							=t :sign_in
 				-if user_signed_in?
 					%li.icon.ic-cart
 						%a{:href => '/cart'}
@@ -64,69 +65,85 @@
 					%li
 						%a{:href => "#"}
 							%span
-								Find Courses
+								=t :find_courses
 								%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
 						%ul
 							%li
-								%a{:href => '/advanced_search'} Advanced Search
+								%a{:href => '/advanced_search'}
+									=t :advanced_search
 							%li
-								%a{:href => "/advanced-search"} Advanced Search
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/14-what-s-new"}
+									=t :whats_new
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/14-what-s-new"} What’s New
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/15-best-sellers"}
+									=t :best_sellers
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/15-best-sellers"} Best Sellers
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/16-tags"}
+									=t :tags
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/16-tags"} Tags
-							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/17-categories"} Categories
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/17-categories"}
+									=t :categories
 					%li
 						%a{:href => "#"}
 							%span
-								Products
+								=t :products
 								%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
 						%ul
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/18-our-courses"} Our Courses
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/18-our-courses"}
+									=t :our_courses
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/19-class-member"} Class Member
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/19-class-member"}
+									=t :class_member
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/20-agency"} Agency
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/20-agency"}
+									=t :agency
 							%li
 								%a{:href => "http://abc-onlinelearningcenter.com/pages/21-ipad-iphone"} iPad / iPhone
 							%li
 								%a{:href => "http://abc-onlinelearningcenter.com/pages/22-dvds"} DVDs
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/23-give-a-gift"} Give a gift
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/23-give-a-gift"}
+									=t :give_gift
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/24-free-courses"} Free courses
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/24-free-courses"}
+									=t :free_courses
 					%li
 						%a{:href => "#"}
 							%span
-								News
+								=t :news
 								%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
 						%ul
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/10-newsletter"} Newsletter
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/10-newsletter"}
+									=t :newsletter
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/11-press-releases"} Press Releases
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/11-press-releases"}
+									=t :press_releases
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/12-media"} Media
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/12-media"}
+									=t :media
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/13-events"} Events
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/13-events"}
+									=t :events
 					%li
 						%a{:href => "#"}
 							%span
-								About Us
+								=t :about_us
 								%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
 						%ul
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/6-abc-e-learning-story"} ABC e-learning Story
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/6-abc-e-learning-story"}
+									=t :abc_story
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/7-executive-team"} Executive Team
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/7-executive-team"}
+									=t :executive_team
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/8-partnership"} Partnership
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/8-partnership"}
+									=t :partnership
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/9-careers"} Careers
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/9-careers"}
+									=t :careers
 					%li
 						%a{:href => "#"}
 							%span
@@ -134,11 +151,14 @@
 								%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
 						%ul
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/25-frequently-asked-question"} Frequently asked Question
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/25-frequently-asked-question"}
+									=t :faq
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/26-contact-us"} Contact us
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/26-contact-us"}
+									=t :contact_us
 							%li
-								%a{:href => "http://abc-onlinelearningcenter.com/pages/27-system-requeriments"} System Requirements
+								%a{:href => "http://abc-onlinelearningcenter.com/pages/27-system-requeriments"}
+									=t :system_requirements
 			/ /main-nav
 		/ /wrapper
 	/ /header
@@ -155,74 +175,104 @@
 			#footnav
 				%ul
 					%li
-						%strong Why choose us?
+						%strong
+							=t :why_choose_us
 					%li
-						%a{:href => 'http://abc-onlinelearningcenter.com/pages/1-benefits'} Benefits
+						%a{:href => 'http://abc-onlinelearningcenter.com/pages/1-benefits'}
+							=t :benefits
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/4-membership"} Membership
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/4-membership"}
+							=t :membership
 					%li
-						%a{:href => 'http://abc-onlinelearningcenter.com/pages/5-testimonials'} Testimonials
+						%a{:href => 'http://abc-onlinelearningcenter.com/pages/5-testimonials'}
+							=t :testimonials
 				%ul
 					%li
-						%strong About Us
+						%strong
+							=t :about_us
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/6-abc-e-learning-story"} ABC e-learning Story
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/6-abc-e-learning-story"}
+							=t :abc_story
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/7-executive-team"} Executive Team
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/7-executive-team"}
+							=t :executive_team
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/8-partnership"} Partnership
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/8-partnership"}
+							=t :partnership
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/9-careers"} Careers
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/9-careers"}
+							=t :careers
 				%ul
 					%li
-						%strong News
+						%strong
+							=t :news
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/10-newsletter"} Newsletter
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/10-newsletter"}
+							=t :newsletter
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/11-press-releases"} Press Releases
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/11-press-releases"}
+							=t :press_releases
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/12-media"} Media
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/12-media"}
+							=t :media
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/13-events"} Events
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/13-events"}
+							=t :events
 				%ul
 					%li
-						%strong Find Courses
+						%strong
+							=t :find_courses
 					%li
-						%a{:href => "/advanced-search"} Advanced Search
+						%a{:href => "/advanced-search"}
+							=t :advanced_search
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/14-what-s-new"} What’s New
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/14-what-s-new"}
+							=t :whats_new
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/15-best-sellers"} Best Sellers
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/15-best-sellers"}
+							=t :best_sellers
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/16-tags"} Tags
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/16-tags"}
+							=t :tags
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/17-categories"} Categories
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/17-categories"}
+							=t :categories
 				%ul
 					%li
-						%strong Products
+						%strong
+							=t :products
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/18-our-courses"} Our Courses
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/18-our-courses"}
+							=t :our_courses
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/19-class-member"} Class Member
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/19-class-member"}
+							=t :class_member
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/20-agency"} Agency
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/20-agency"}
+							=t :agency
 					%li
 						%a{:href => "http://abc-onlinelearningcenter.com/pages/21-ipad-iphone"} iPad / iPhone
 					%li
 						%a{:href => "http://abc-onlinelearningcenter.com/pages/22-dvds"} DVDs
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/23-give-a-gift"} Give a gift
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/23-give-a-gift"}
+							=t :give_gift
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/24-free-courses"} Free courses
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/24-free-courses"}
+							=t :free_courses
 				%ul
 					%li
-						%strong Support
+						%strong
+							Support
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/25-frequently-asked-question"} Frequently asked Question
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/25-frequently-asked-question"}
+							=t :faq
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/26-contact-us"} Contact us
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/26-contact-us"}
+							=t :contact_us
 					%li
-						%a{:href => "http://abc-onlinelearningcenter.com/pages/27-system-requeriments"} System Requirements
+						%a{:href => "http://abc-onlinelearningcenter.com/pages/27-system-requeriments"}
+							=t :system_requirements
 				.clr
 					/ 
 			/ /footnav
@@ -230,7 +280,8 @@
 				/ 
 			%ul#social
 				%li.first
-					%strong Follow us:
+					%strong
+						Follow us:
 				%li
 					%a{:href => "#"}
 						%img.ic-youtube{:alt => "YouTube", :height => "34", :src => "/images/spaceball.gif", :width => "32"}/
@@ -245,16 +296,23 @@
 						%img.ic-linkedin{:alt => "LinkedIn", :height => "34", :src => "/images/spaceball.gif", :width => "32"}/
 			/ /social
 			.legal
-				%a{:href => "http://abc-onlinelearningcenter.com/pages/28-became-a-reseller"} Became a Reseller
+				%a{:href => "http://abc-onlinelearningcenter.com/pages/28-became-a-reseller"}
+					=t :became_reseller
 				%span |
-				%a{:href => "http://abc-onlinelearningcenter.com/pages/29-affiliate-program"} Affiliate program
+				%a{:href => "http://abc-onlinelearningcenter.com/pages/29-affiliate-program"}
+					=t :affiliate_program
 				%span |
-				%a{:href => "http://abc-onlinelearningcenter.com/pages/30-privacy-policy"} Privacy Policy
+				%a{:href => "http://abc-onlinelearningcenter.com/pages/30-privacy-policy"}
+					=t :privacy_policy
 				%span |
-				%a{:href => "http://abc-onlinelearningcenter.com/pages/31-terms-and-conditions"} Terms and Conditions
+				%a{:href => "http://abc-onlinelearningcenter.com/pages/31-terms-and-conditions"}
+					=t :terms_conditions
 				%span |
-				%a{:href => "#"} Site map
-				%p Copyright © 2011 ABC Online learning Center, Inc. All rights reserved.
+				%a{:href => "#"}
+					=t :sitemap
+				%p
+					Copyright © 2011 ABC Online learning Center, Inc.
+					=t :all_rights
 			/ /legal
 			.clr
 				/ 

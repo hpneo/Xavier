@@ -1,5 +1,82 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  sign_in: "Sign In"
+  sign_out: "Sign Out"
+  home: "Home"
+  
+  find_courses: "Find courses"
+  advanced_search: "Advanced Search"
+  whats_new: "What's New"
+  best_sellers: "Best Sellers"
+  tags: "Tags"
+  categories: "Categories"
+  
+  products: "Products"
+  our_courses: "Our Courses"
+  class_member: "Class Member"
+  agency: "Agency"
+  give_gift: "Give a gift"
+  free_courses: "Free courses"
+  
+  news: "News"
+  newsletter: "Newsletter"
+  press_releases: "Press Releases"
+  media: "Media"
+  events: "Events"
+  
+  about_us: "About us"
+  abc_story: "ABC e-learning Story"
+  executive_team: "Executive Team"
+  partnership: "Partnership"
+  careers: "Careers"
+  
+  support: "Support"
+  faq: "Frequently Asked Questions"
+  contact_us: "Contact us"
+  system_requirements: "System Requirements"
+  
+  new_courses: "New Courses"
+  category: "Category"
+  
+  why_choose_us: "Why choose us?"
+  benefits: "Benefits"
+  membership: "Membership"
+  testimonials: "Testimonials"
+  
+  became_reseller: "Became a reseller"
+  affiliate_program: "Affiliate program"
+  privacy_policy: "Privacy Policy"
+  terms_conditions: "Terms and Conditions"
+  
+  sitemap: "Site map"
+  all_rights: "All rights reserved"
+  follow_us: "Follow us:"
+  
+  my_cart: "My cart"
+  name: "Name"
+  type: "Type"
+  price: "Price"
+  
+  pages: "Pages"
+  add_page: "Add page"
+  
+  users: "Users"
+  add_user: "Add user"
+  
+  add_category: "Add category"
+  
+  add_product: "Add product"
+  
+  title: "Title"
+  locale: "Locale"
+  content: "Content"
+  spanish_content: "Spanish Content"
+  
+  first_name: "First name"
+  last_name: "Last name"
+  email: "Email"
+  password: "Password"
+  
+  summary: "Summary"
+  mark_free: "Or mark it free"
+  role: "Role"
+  
