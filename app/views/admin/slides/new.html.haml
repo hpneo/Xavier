@@ -1,0 +1,11 @@
+.box
+	%h2.cufon1
+		Adding Slide:
+	-form_for([:admin, @slide], :html => {:multipart => true}) do |f|
+		=render 'layouts/error_messages', :object => f.object
+		
+		%p.fields
+			=f.file_field :source
+			
+		%p.actions
+			=f.submit "Add"

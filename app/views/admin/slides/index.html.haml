@@ -1,0 +1,19 @@
+.box
+	%h2.cufon1 Slides
+	%table.products
+		%thead
+			%tr
+				%th Name
+				%th{:colspan => 3} Actions
+			%tr
+		%tbody
+			-@slides.each do |slide|
+				%tr
+					%td.name= slide.file.url
+					%td
+						=link_to 'View', slide.file.url
+					%td
+						=link_to 'Edit', edit_admin_slide_path(slide)
+					%td
+						=link_to 'Delete', [:admin, slide], :method => :delete, :confirm => "You sure?"
+/ /box
