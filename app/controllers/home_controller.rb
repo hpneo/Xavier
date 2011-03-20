@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 	def index
 		@recent_courses = Product.courses.recent
 		@popular_courses = Product.courses.popular
+		@slides = Slide.all
 	end
 	
 	def language

@@ -1,25 +1,17 @@
 #slider
 	#slides
-		.slide
-			%img{:height => "370", :src => "images/banner/slide1.jpg", :width => "960"}/
-			%ul.banner-button
-				%li
-					%a{:href => "#"}
-						%img{:height => "37", :src => "images/banner/btn_learnmore.png", :width => "132"}/
-				%li
-					%a{:href => "#"}
-						%img{:height => "37", :src => "images/banner/btn_signup.png", :width => "132"}/
-		/ /slide
-		.slide
-			%img{:height => "370", :src => "images/banner/slide2.jpg", :width => "960"}/
-			%ul.banner-button
-				%li
-					%a{:href => "#"}
-						%img{:height => "37", :src => "images/banner/btn_learnmore.png", :width => "132"}/
-				%li
-					%a{:href => new_user_session_path}
-						%img{:height => "37", :src => "images/banner/btn_signup.png", :width => "132"}/
-		/ /slide
+		-@slides.each do |slide|
+			.slide
+				%img{:height => "370", :src => slide.file.url, :width => "960"}/
+				%ul.banner-button
+					%li
+						%a{:href => "#"}
+							%img{:height => "37", :src => "images/banner/btn_learnmore.png", :width => "132"}/
+					%li
+						%a{:href => "#"}
+							%img{:height => "37", :src => "images/banner/btn_signup.png", :width => "132"}/
+			/ /slide
+		end
 	/ /slides
 / /slider
 .box

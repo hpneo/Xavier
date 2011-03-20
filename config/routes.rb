@@ -27,6 +27,7 @@ Xavier::Application.routes.draw do
 		resources :categories
 		resources :products
 		resources :users
+		resources :slides
 	end
 	
 	post "versions/:id/revert" => "versions#revert", :as => "revert_version"

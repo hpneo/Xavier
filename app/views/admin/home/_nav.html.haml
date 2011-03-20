@@ -1,6 +1,14 @@
 %li
-	%a{:href => admin_root_path, :class => nav_class(admin_root_path)}
+	%a{:href => admin_root_path, :class => nav_class(root_path)}
 		%span Home
+%li
+	%a{:href => admin_slides_path, :class => nav_class(admin_slides_path)}
+		%span
+			Slides
+			%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
+	%ul
+		%li
+			%a{:href => new_admin_slide_path} Add slide
 %li
 	%a{:href => admin_pages_path, :class => nav_class(admin_pages_path)}
 		%span
