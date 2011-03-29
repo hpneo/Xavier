@@ -47,9 +47,11 @@
 						%a{:href => "/change_language?lang=es"} Spanish
 				-if user_signed_in?
 					%li
-						%a{:href => '/my_products'} My products
+						%a{:href => '/my_products'}
+							=t :my_products
 					%li
-						%a{:href => destroy_user_session_path} Sign Out
+						%a{:href => destroy_user_session_path}
+						=t :sign_out
 					-if current_user.admin?
 						%li
 							%a{:href => admin_root_path} Admin

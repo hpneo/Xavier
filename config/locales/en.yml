@@ -2,6 +2,7 @@ en:
   sign_in: "Sign In"
   sign_out: "Sign Out"
   home: "Home"
+  my_products: "My produccts"
   
   find_courses: "Find courses"
   advanced_search: "Advanced Search"
@@ -80,3 +81,8 @@ en:
   mark_free: "Or mark it free"
   role: "Role"
   
+  download: "Download"
+  express_checkout: "Express checkout"
+  add_to_cart: "Add to cart"
+  
+  courses: "Courses"

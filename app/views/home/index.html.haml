@@ -24,7 +24,8 @@
 				%p.price
 					=number_to_currency(course.price)
 				%p
-					Category:
+					=t :category
+					#{":"}
 					%a{:href => category_path(course.category)}
 						=course.category.name
 			/ /col
@@ -42,7 +43,8 @@
 				%p.price
 					=number_to_currency(course.price)
 				%p
-					Category:
+					=t :category
+					#{":"}
 					%a{:href => category_path(course.category)}
 						=course.category.name
 			/ /col

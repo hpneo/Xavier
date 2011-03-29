@@ -2,16 +2,17 @@
 	%h2.cufon1
 		=@product.name
 	%h3.cufon1
-		Price:
+		=t :price
+		#{":"}
 		=number_to_currency(@product.price)
 	-if current_user
 		-if current_user.purchased?(@product) || @product.free?
 			-if @product.file
 				%a.button{:href => @product.file.url}
-					Download
+					=t :download
 		-unless current_user.purchased?(@product)
 			%a.button{:href => product_purchase_path(@product)}
-				Express checkout
+				=t :express_checkout
 			%a.button{:href => product_add_to_cart_path(@product)}
-				Add to cart
+				=t :add_to_cart
 / /box
