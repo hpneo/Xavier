@@ -44,7 +44,7 @@
 					- if session[:language] && session[:language] == "es"
 						%a{:href => "/change_language?lang=en"} English
 					- else
-						%a{:href => "/change_language?lang=es"} Spanish
+						%a{:href => "/change_language?lang=es"} Español
 				-if user_signed_in?
 					%li
 						%a{:href => '/my_products'}
@@ -149,7 +149,7 @@
 					%li
 						%a{:href => "#"}
 							%span
-								Support
+								= t :support
 								%img{:height => "6", :src => "/images/arrow_down.png", :width => "11"}/
 						%ul
 							%li
@@ -265,7 +265,7 @@
 				%ul
 					%li
 						%strong
-							Support
+							= t :support
 					%li
 						%a{:href => "http://abc-onlinelearningcenter.com/pages/25-frequently-asked-question"}
 							=t :faq
@@ -283,7 +283,7 @@
 			%ul#social
 				%li.first
 					%strong
-						Follow us:
+						= t :follow_us
 				%li
 					%a{:href => "#"}
 						%img.ic-youtube{:alt => "YouTube", :height => "34", :src => "/images/spaceball.gif", :width => "32"}/

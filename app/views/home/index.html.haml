@@ -14,7 +14,8 @@
 	/ /slides
 / /slider
 .box
-	%h2.cufon1 New Courses
+	%h2.cufon1
+	  = t :new_courses
 	-unless @recent_courses.empty?
 		-@recent_courses.each do |course|
 			.col
@@ -33,7 +34,8 @@
 		/ 
 / /box
 .box
-	%h2.cufon1 Most Popular
+	%h2.cufon1
+	  = t :most_popular
 	-unless @popular_courses.empty?
 		-@popular_courses.each do |course|
 			.col
