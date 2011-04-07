@@ -3,6 +3,8 @@ es:
   sign_out: "Cerrar sesión"
   home: "Inicio"
   my_products: "Mis productos"
+  product: "producto"
+  products: "productos"
   
   find_courses: "Buscar cursos"
   advanced_search: "Búsqueda avanzada"

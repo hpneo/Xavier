@@ -3,6 +3,9 @@ en:
   sign_out: "Sign Out"
   home: "Home"
   my_products: "My produccts"
+  product: "product"
+  products: "products"
+  
   
   find_courses: "Find courses"
   advanced_search: "Advanced Search"
