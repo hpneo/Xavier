@@ -1,6 +1,9 @@
 .box
 	%h2.cufon1
-		=@page.title
+    - if session[:language] && session[:language] == "es"
+		  =@page.spanish_title
+		- else
+		  =@page.title
 	- if session[:language] && session[:language] == "es"
 		=raw @page.other_content
 	- else

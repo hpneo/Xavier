@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110320171108) do
+ActiveRecord::Schema.define(:version => 20110407204400) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20110320171108) do
     t.datetime "updated_at"
     t.string   "locale"
     t.text     "other_content"
+    t.string   "spanish_title"
   end
 
   create_table "prints", :force => true do |t|
