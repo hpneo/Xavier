@@ -1,78 +1,78 @@
 .box
-	%h2.cufon1
+  %h2.cufon1
     - if session[:language] && session[:language] == "es"
-		  =@page.spanish_title
-		- else
-		  =@page.title
-	- if session[:language] && session[:language] == "es"
-		=raw @page.other_content
-	- else
-		=raw @page.content
-	- case @page.id
-	- when 18
-		%h3.cufon1
-			= t :courses
-		-unless @courses.empty?
-			- @courses.each do |course|
-				.col
-					%h3
-						%a{:href => product_path(course)}
-							=course.name
-					%p.price
-						=number_to_currency(course.price)
-					%p
-						=t :category
-						#{":"}
-						%a{:href => category_path(course.category)}
-							=course.category.name
-				/ /col
-		.clr
-			/
-	- when 24
-		%h3.cufon1
-			= t :courses
-		-unless @courses.empty?
-			- @courses.each do |course|
-				.col
-					%h3
-						%a{:href => product_path(course)}
-							=course.name
-					%p.price
-						=number_to_currency(course.price)
-					%p
-						=t :category
-						#{":"}
-						%a{:href => category_path(course.category)}
-							=course.category.name
-				/ /col
-		.clr
-			/
-	- when 15
-		%h3.cufon1
-			= t :courses
-		-unless @courses.empty?
-			- @courses.each do |course|
-				.col
-					%h3
-						%a{:href => product_path(course)}
-							=course.name
-					%p.price
-						=number_to_currency(course.price)
-					%p
-						=t :category
-						#{":"}
-						%a{:href => category_path(course.category)}
-							=course.category.name
-				/ /col
-		.clr
-			/
-	- when 17
-		%h3.cufon1
-			= t :categories
-		-unless @categories.empty?
-			%ul
-			- @categories.each do |category|
-				%li
-					%a{:href => category_path(category)}
-						= category.name
+      =@page.spanish_title
+    - else
+      =@page.title
+  - if session[:language] && session[:language] == "es"
+    =raw @page.other_content
+  - else
+    =raw @page.content
+  - case @page.id
+  - when 18
+    %h3.cufon1
+      = t :courses
+    -unless @courses.empty?
+      - @courses.each do |course|
+        .col
+          %h3
+            %a{:href => product_path(course)}
+              =course.name
+          %p.price
+            =number_to_currency(course.price)
+          %p
+            =t :category
+            #{":"}
+            %a{:href => category_path(course.category)}
+              =course.category.name
+        / /col
+    .clr
+      /
+  - when 24
+    %h3.cufon1
+      = t :courses
+    -unless @courses.empty?
+      - @courses.each do |course|
+        .col
+          %h3
+            %a{:href => product_path(course)}
+              =course.name
+          %p.price
+            =number_to_currency(course.price)
+          %p
+            =t :category
+            #{":"}
+            %a{:href => category_path(course.category)}
+              =course.category.name
+        / /col
+    .clr
+      /
+  - when 15
+    %h3.cufon1
+      = t :courses
+    -unless @courses.empty?
+      - @courses.each do |course|
+        .col
+          %h3
+            %a{:href => product_path(course)}
+              =course.name
+          %p.price
+            =number_to_currency(course.price)
+          %p
+            =t :category
+            #{":"}
+            %a{:href => category_path(course.category)}
+              =course.category.name
+        / /col
+    .clr
+      /
+  - when 17
+    %h3.cufon1
+      = t :categories
+    -unless @categories.empty?
+      %ul
+      - @categories.each do |category|
+        %li
+          %a{:href => category_path(category)}
+            = category.name
 / /box
