@@ -3,7 +3,11 @@ class HomeController < ApplicationController
 	def index
 		@recent_courses = Product.courses.recent
 		@popular_courses = Product.courses.popular
-		@slides = Slide.all
+    if session[:language] && session[:es]
+		  @slides = Slide.spanish_slides 
+	  else
+		  @slides = Slide.english_slides
+	  end
 	end
 	
 	def language
@@ -11,8 +15,8 @@ class HomeController < ApplicationController
     		lang = params[:lang]
     		I18n.locale = params[:lang].to_sym
     	else
-    		lang = "es"
-    		I18n.locale = :es
+    		lang = "en"
+    		I18n.locale = :en
     	end
     	
     	session[:language] = lang

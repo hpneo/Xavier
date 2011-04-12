@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110407204400) do
+ActiveRecord::Schema.define(:version => 20110412215359) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -74,6 +74,10 @@ ActiveRecord::Schema.define(:version => 20110407204400) do
     t.integer  "source_file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "spanish_source_file_name"
+    t.string   "spanish_source_content_type"
+    t.datetime "spanish_source_updated_at"
+    t.integer  "spanish_source_file_size"
   end
 
   create_table "users", :force => true do |t|

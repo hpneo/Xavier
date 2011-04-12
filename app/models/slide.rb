@@ -4,13 +4,14 @@ class Slide < ActiveRecord::Base
 		:storage => :s3,
 		:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
 		:path => '/slide/:id/:filename'
+
+	has_attached_file :spanish_source,
+		:storage => :s3,
+		:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+		:path => '/slide/spanish/:id/:filename'
 	
 	def file
-		file = Slide.where(:id => self.id).last
-		if file
-			file.source
-		else
-			nil
-		end
+		self.source
 	end
+
 end
