@@ -2,7 +2,10 @@
 	#slides
 		-@slides.each do |slide|
 			.slide
-				%img{:height => "370", :src => slide.file.url, :width => "960"}/
+			  - if session[:language] && session[:es]
+				  %img{:height => "370", :src => slide.spanish_source.url, :width => "960"}/
+				- else
+				  %img{:height => "370", :src => slide.file.url, :width => "960"}/  
 				%ul.banner-button
 					%li
 						%a{:href => "#"}
