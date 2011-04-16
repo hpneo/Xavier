@@ -1,10 +1,10 @@
 .box
   %h2.cufon1
-    - if cookies[:language] && cookies[:language] == "es"
+    - if cookies[:language] == "es"
       =@page.spanish_title
     - else
       =@page.title
-  - if cookies[:language] && cookies[:language] == "es"
+  - if cookies[:language] == "es"
     =raw @page.other_content
   - else
     =raw @page.content
