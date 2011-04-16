@@ -9,5 +9,7 @@ class ApplicationController < ActionController::Base
 	
 	def check_cookie
 	 cookies[:language] ||= "en"
+	 I18n.locale = cookies[:language].to_sym
 	end
+
 end
