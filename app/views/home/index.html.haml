@@ -1,18 +1,13 @@
 #slider
   #slides
     -@slides.each do |slide|
-      .slide
-        - if session[:language] && session[:es]
-          %img{:height => "370", :src => slide.spanish_source.url, :width => "960"}/
-        - else
-          %img{:height => "370", :src => slide.file.url, :width => "960"}/  
-        %ul.banner-button
-          %li
-            %a{:href => "#"}
-              %img{:height => "37", :src => "images/banner/btn_learnmore.png", :width => "132"}/
-          %li
-            %a{:href => "#"}
-              %img{:height => "37", :src => "images/banner/btn_signup.png", :width => "132"}/
+      .slide{:class =>("dark" if slide.dark? )}
+        %img{:height => "370", :src => slide.file.url, :width => "960"}/  
+        .banner-text
+          - if cookies[:language] == "es"
+            = raw slide.spanish_content
+          -else
+            = raw slide.content
       / /slide
   / /slides
 / /slider

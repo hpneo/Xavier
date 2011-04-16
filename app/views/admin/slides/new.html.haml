@@ -1,13 +1,21 @@
 .box
-	%h2.cufon1
-		Adding Slide:
-	-form_for([:admin, @slide], :html => {:multipart => true}) do |f|
-		=render 'layouts/error_messages', :object => f.object
-		
-		%p.fields
-			=f.file_field :source
+  %h2.cufon1
+    Adding Slide:
+  -form_for([:admin, @slide], :html => {:multipart => true}) do |f|
+    =render 'layouts/error_messages', :object => f.object
+    
     %p.fields
-			=f.file_field :spanish_source, :label => "Spanish banner"			
-			
-		%p.actions
-			=f.submit "Add"
+      =f.file_field :source, :label => "Banner"
+
+    %p.fields
+      =f.check_box :dark, :label => "Dark background?"
+
+      
+    %p.fields
+      =f.text_area :content, :class => "mceEditor"   
+    %p.fields
+      =f.text_area :spanish_content, :label => "Spanish Content", :class => "mceEditor"   
+
+      
+    %p.actions
+      =f.submit "Add"

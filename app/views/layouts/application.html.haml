@@ -44,7 +44,7 @@
               = t :products
               , $0.00
         %li
-          - if session[:language] && session[:language] == "es"
+          - if cookies[:language] && cookies[:language] == "es"
             %a{:href => "/change_language?lang=en"} English
           - else
             %a{:href => "/change_language?lang=es"} Español

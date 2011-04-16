@@ -1,5 +1,5 @@
 class Admin::SlidesController < ApplicationController
-	
+	uses_tiny_mce(:options => AppConfig.default_mce_options, :only => [:new, :edit])	
 	before_filter :authenticate_admin!
 
 	def index

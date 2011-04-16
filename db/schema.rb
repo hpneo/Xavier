@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110412230205) do
+ActiveRecord::Schema.define(:version => 20110416003701) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -78,6 +78,9 @@ ActiveRecord::Schema.define(:version => 20110412230205) do
     t.string   "spanish_source_content_type"
     t.datetime "spanish_source_updated_at"
     t.integer  "spanish_source_file_size"
+    t.text     "content"
+    t.text     "spanish_content"
+    t.boolean  "dark"
   end
 
   create_table "users", :force => true do |t|

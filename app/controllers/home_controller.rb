@@ -3,11 +3,8 @@ class HomeController < ApplicationController
 	def index
 		@recent_courses = Product.courses.recent
 		@popular_courses = Product.courses.popular
-    if session[:language] && session[:es]
-		  @slides = Slide.spanish_slides 
-	  else
-		  @slides = Slide.english_slides
-	  end
+	  @slides = Slide.all
+
 	end
 	
 	def language
@@ -19,7 +16,7 @@ class HomeController < ApplicationController
     		I18n.locale = :en
     	end
     	
-    	session[:language] = lang
+    	cookies[:language] = lang
 
     	redirect_to request.env["HTTP_REFERER"]
 	end

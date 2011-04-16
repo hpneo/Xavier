@@ -1,13 +1,22 @@
 .box
-	%h2.cufon1
-		Edit Slide:
-	-form_for([:admin, @slide], :html => {:multipart => true}) do |f|
-		=render 'layouts/error_messages', :object => f.object
-		
-		%p.fields
-			=f.file_field :source
-		%p.fields
-			=f.file_field :spanish_source, :label => "Spanish banner"
-			
-		%p.actions
-			=f.submit "Edit"
+  %h2.cufon1
+    Edit Slide:
+  -form_for([:admin, @slide], :html => {:multipart => true}) do |f|
+    =render 'layouts/error_messages', :object => f.object
+    
+    %p.fields
+      =f.label :source, "Banner"
+      =f.file_field :source
+    %p.fields
+      =f.label :source, "Dark background?"    
+      =f.check_box :dark
+
+    %p.fields
+      =f.label :content, "Content"
+      =f.text_area :content, :class => "mceEditor"   
+    %p.fields
+      =f.label :spanish_content, "Spanish Content"
+      =f.text_area :spanish_content, :class => "mceEditor"   
+      
+    %p.actions
+      =f.submit "Edit"
