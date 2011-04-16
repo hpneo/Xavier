@@ -5,17 +5,18 @@
     =render 'layouts/error_messages', :object => f.object
     
     %p.fields
-      =f.file_field :source, :label => "Banner"
+      =f.label :source, "Banner"
+      =f.file_field :source
+    %p.fields
+      =f.label :source, "Dark background?"    
+      =f.check_box :dark
 
     %p.fields
-      =f.check_box :dark, :label => "Dark background?"
-
-      
-    %p.fields
+      =f.label :content, "Content"
       =f.text_area :content, :class => "mceEditor"   
     %p.fields
-      =f.text_area :spanish_content, :label => "Spanish Content", :class => "mceEditor"   
-
+      =f.label :spanish_content, "Spanish Content"
+      =f.text_area :spanish_content, :class => "mceEditor"
       
     %p.actions
       =f.submit "Add"
