@@ -1,3 +1,5 @@
 $(function(){
-	 $('#slides').cycle();
+	 $('#slides').cycle({
+	 	timeout: 10000
+	 });
 });
