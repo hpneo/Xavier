@@ -15,7 +15,7 @@ module ApplicationHelper
 	end
 	
 	def page_title(id)
-		page = Page.new#page = Page.find(id)
+		page = Page.find(id)
 		if cookies[:language]==nil || cookies[:language]=="en"
 			page.title
 		else
