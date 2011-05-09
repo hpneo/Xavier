@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110416003701) do
+ActiveRecord::Schema.define(:version => 20110509213028) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(:version => 20110416003701) do
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.text     "other_content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "locale"
-    t.text     "other_content"
     t.string   "spanish_title"
   end
 
@@ -64,6 +64,14 @@ ActiveRecord::Schema.define(:version => 20110416003701) do
     t.integer  "user_id"
     t.integer  "product_id"
     t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "site_options", :force => true do |t|
+    t.string   "name"
+    t.text     "value"
+    t.string   "option_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

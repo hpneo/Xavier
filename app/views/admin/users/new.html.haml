@@ -16,5 +16,8 @@
 		%p.fields
 			=f.label :password
 			=f.password_field :password
+		%p.fields
+			=f.label :role
+			=collection_select(:user, :role, {:admin => "Admin", :editor => "Editor", :user => "User"}, :first, :last)
 		%p.actions
 			=f.submit "Add"

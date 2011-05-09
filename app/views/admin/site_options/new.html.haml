@@ -1,0 +1,16 @@
+.box
+	%h2.cufon1
+		Add Option:
+	-form_for([:admin, @option]) do |f|
+		=render 'layouts/error_messages', :object => f.object
+		%p.fields
+			=f.label :name
+			=f.text_field :name
+		%p.fields
+			=f.label :value
+			=f.text_field :value
+		%p.fields
+			=f.label :option_type
+			=collection_select(:site_option, :option_type, {:meta => "Metatags", :system => "System"}, :first, :last)
+		%p.actions
+			=f.submit "Add"

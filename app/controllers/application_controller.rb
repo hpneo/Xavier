@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :check_cookie
   
 	def authenticate_admin!
-  		redirect_to root_path unless current_user && authenticate_user! && current_user.admin?
+  		redirect_to root_path unless current_user && authenticate_user! && (current_user.admin? || current_user.editor?)
 	end
 	
 	def check_cookie

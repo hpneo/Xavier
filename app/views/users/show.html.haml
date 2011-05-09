@@ -6,4 +6,6 @@
 	%p
 		-if user_signed_in? && current_user.id==@user.id
 			%a{:href => edit_user_registration_path(@user)} Edit profile
+			You have spent
+			= number_to_currency(current_user.paid_purchases_amount)
 / /box

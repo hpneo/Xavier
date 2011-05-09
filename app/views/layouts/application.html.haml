@@ -16,6 +16,8 @@
     /[if lt IE 7]
       =stylesheet_link_tag 'ie6'
       =javascript_include_tag 'ie6hover.js'
+    - meta.each do |meta|
+      %meta{:content => meta.value, :name => meta.name}/
     =csrf_meta_tag
   %body
   #header
@@ -36,7 +38,8 @@
           %li.icon.ic-cart
             %a{:href => '/cart'}
               =pluralize(current_user.pending_purchases.count, t(:product))
-              , $0.00
+              ,
+              = number_to_currency(current_user.pending_purchases_amount)
         -else
           %li.icon.ic-cart
             %a{:href => '/cart'}
@@ -61,8 +64,9 @@
       / /topnav
       =render :partial => 'layouts/search_form'
       %ul#nav
-        -if user_signed_in? && current_user.admin?
-          =render :partial => 'admin/home/nav'
+        -if user_signed_in?
+          -if current_user.admin? || current_user.editor?
+            =render :partial => 'admin/home/nav'
         -else
           %li
             %a.current{:href => root_path}

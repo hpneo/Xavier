@@ -12,9 +12,9 @@ class ProductsController < ApplicationController
 		
 		if @purchase.save
 			redirect_to '/cart'
-    else
-      flash[:warning] = "There was an issue while processing your cart"
-      render :show
+	    else
+	      flash[:warning] = "There was an issue while processing your cart"
+	      render :show
 		end
 	end
 	

@@ -1,0 +1,21 @@
+.box
+	%h2.cufon1 Site Options
+	%table.products
+		%thead
+			%tr
+				%th Name
+				%th Value
+				%th Type
+				%th{:colspan => 2} Actions
+			%tr
+		%tbody
+			-@options.each do |option|
+				%tr
+					%td.name= option.name
+					%td= option.value
+					%td= option.option_type
+					%td
+						=link_to 'Edit', edit_admin_site_option_path(option)
+					%td
+						=link_to 'Delete', [:admin, option], :method => :delete, :confirm => "You sure?"
+/ /box

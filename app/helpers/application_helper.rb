@@ -1,5 +1,9 @@
 module ApplicationHelper
 	
+	def meta
+		SiteOption.where({:option_type => 'meta'})
+	end
+	
 	def nav_class(path)
 		if is_current_path(path)
 			'current'
@@ -11,7 +15,7 @@ module ApplicationHelper
 	end
 	
 	def page_title(id)
-		page = Page.find(id)
+		page = Page.new#page = Page.find(id)
 		if cookies[:language]==nil || cookies[:language]=="en"
 			page.title
 		else

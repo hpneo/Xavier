@@ -13,5 +13,8 @@
 		%p.fields
 			=f.label :email
 			=f.text_field :email
+		%p.fields
+			=f.label :role
+			=collection_select(:user, :role, {:admin => "Admin", :editor => "Editor", :user => "User"}, :first, :last)
 		%p.actions
 			=f.submit "Edit"
