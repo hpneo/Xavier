@@ -10,9 +10,26 @@
 			=f.text_field :name
 		%p.fields
 			=f.label :option_type
-			=collection_select(:site_option, :option_type, {:email => "Email", :meta => "Metatags", :system => "System"}, :first, :last)
+			=collection_select(:option, :option_type, {:email => "Email", :meta => "Metatags", :system => "System"}, :first, :last)
+		-if @option.option_type == 'email'
+			%div{:style => "float:right"}
+				%h3.cufon1 Available fields
+				%dl
+					%dt
+						%strong [[resource_email]]:
+					%dd The email representing the person
+					%dt
+						%strong [[confirmation_link]]:
+					%dd Prints out the link users will use to confirm their password
+					%dt
+						%strong [[edit_password_url]]:
+					%dd Prints out link users will use to reset or update their password
+					%dt
+						%strong [[unlock_account_url]]:
+					%dd Prints out link users will use to unlock their account
 		%p.fields
 			=f.label :value
 			=f.text_area :value, :class => @value_class
+		
 		%p.actions
 			=f.submit "Edit"
