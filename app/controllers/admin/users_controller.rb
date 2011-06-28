@@ -36,4 +36,17 @@ class Admin::UsersController < ApplicationController
 	  		render 'edit'
 	  	end
 	end
+	
+	def destroy
+		@user = User.find(params[:id])
+		if @user.destroy
+			flash[:success] = "User destroyed, #{undo_link}"
+		end
+		redirect_to admin_users_path
+	end
+	
+	private
+		def undo_link
+			view_context.link_to("undo", revert_version_path(@user.versions.scoped.last), :method => :post)
+		end
 end

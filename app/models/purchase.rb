@@ -12,6 +12,9 @@ class Purchase < ActiveRecord::Base
 	
 	validates :user_id, :presence => true
 	validates :product_id, :presence => true
+	validates :credit_card_number, :presence => true
+	validates :expiration_date, :presence => true
+	validates :csc_code, :presence => true
 	
 	def purchase_valid?
 		ActiveMerchant::Billing::Base.mode = :test

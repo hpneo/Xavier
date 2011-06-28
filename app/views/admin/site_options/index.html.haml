@@ -12,7 +12,7 @@
 			-@options.each do |option|
 				%tr
 					%td.name= option.name
-					%td= option.value
+					%td= truncate(option.value, :length => 30)
 					%td= option.option_type
 					%td
 						=link_to 'Edit', edit_admin_site_option_path(option)

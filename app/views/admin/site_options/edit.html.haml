@@ -9,10 +9,10 @@
 			=f.label :name
 			=f.text_field :name
 		%p.fields
-			=f.label :value
-			=f.text_field :value
-		%p.fields
 			=f.label :option_type
-			=collection_select(:site_option, :option_type, {:meta => "Metatags", :system => "System"}, :first, :last)
+			=collection_select(:site_option, :option_type, {:email => "Email", :meta => "Metatags", :system => "System"}, :first, :last)
+		%p.fields
+			=f.label :value
+			=f.text_area :value, :class => @value_class
 		%p.actions
 			=f.submit "Edit"

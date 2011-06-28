@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 	has_many :purchases, :dependent => :destroy
 	has_many :products, :through => :purchases
 	
+	has_paper_trail
+	
 	def pending_purchases
     	purchases.pending
 	end
