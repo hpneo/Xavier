@@ -24,6 +24,8 @@ gem 'paper_trail'
 
 gem "paperclip", "~> 2.3"
 
+gem 'jquery-rails', '>= 1.0.3'
+
 #gem 'rd_searchlogic', :require => 'searchlogic', :git => 'git://github.com/railsdog/searchlogic.git'
 
 # Use unicorn as the web server

@@ -1,4 +1,11 @@
 Xavier::Application.routes.draw do
+	
+	match '/contact_us' => 'supports#new'
+	
+	resources :supports, :only => [:new, :create]
+
+	match '/attachments/create' => 'attachments#create'
+	match '/attachments/manage' => 'attachments#manage'
 
 	devise_for :users
 	resources :users

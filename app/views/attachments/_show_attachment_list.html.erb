@@ -1,13 +1,3 @@
-<script>
-$(function() {
-  $(".pagination a").live("click", function() {
-    $(".pagination").html("Page is loading...");
-    $.get(this.href, null, null, "script");
-/* alert(this.href); */
-    return false;
-  });
-});
-</script>
 <% unless @attachments.empty? %>
 <ul class="attachment_list">
 <% @attachments.each do |p| %>
@@ -37,7 +27,7 @@ $(function() {
 </ul>
 <br style="clear:both;" />
 <div style="float:right;margin-bottom:10px;">
-<%= will_paginate @attachments, :class => "pagination", :previous_label => "&laquo; previous",  :next_label => "next &raquo;" %>
+<%= will_paginate @attachments, :class => "pagination", :previous_label => "&laquo; previous",  :next_label => "next &raquo;", :renderer => 'RemoteLinkRenderer' %>
 </div>
 <% else %>
 No <%= params[ :media ]%> Uploaded Yet.
