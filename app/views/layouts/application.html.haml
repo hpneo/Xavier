@@ -65,9 +65,8 @@
       / /topnav
       =render :partial => 'layouts/search_form'
       %ul#nav
-        -if user_signed_in?
-          -if current_user.admin? || current_user.editor?
-            =render :partial => 'admin/home/nav'
+        -if user_signed_in? && (current_user.admin? || current_user.editor?)
+          =render :partial => 'admin/home/nav'
         -else
           %li
             %a.current{:href => root_path}
