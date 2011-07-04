@@ -15,11 +15,7 @@ module ApplicationHelper
 	end
 	
 	def page_title(id)
-		if Rails.env.production?
-			page = Page.find(id)
-		else
-			page = Page.first
-		end
+		page = Page.find(id)
 		if cookies[:language]==nil || cookies[:language]=="en"
 			page.title
 		else
