@@ -83,6 +83,8 @@ border-bottom-left-radius: 5px;}
 .col h3 a{font-size:13px; color:#000; font-weight:bold; line-height:18px}
 .col .price{font-size:13px; color:#a32121}
 
+ul#categories{margin:5px;}
+ul#categories li{margin:5px 0;}
 
 #footer{font-size:11px; color:#676666; padding:8px 0}
 #footnav a{color:#676666}

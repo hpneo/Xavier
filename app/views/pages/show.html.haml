@@ -70,9 +70,9 @@
     %h3.cufon1
       = t :categories
     -unless @categories.empty?
-      %ul
-      - @categories.each do |category|
-        %li
-          %a{:href => category_path(category)}
-            = category.name
+      %ul#categories
+        - @categories.each do |category|
+          %li
+            %a{:href => category_path(category)}
+              = category.name
 / /box

@@ -3,6 +3,8 @@ class PagesController < ApplicationController
 	def show
 		@page = Page.find(params[:id])
 		case @page.id
+			when 14: #what's new
+				@courses = Product.courses.whats_new
 			when 18: #ourcourses
 				@courses = Product.courses
 			when 24: #free courses

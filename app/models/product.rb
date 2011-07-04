@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
 	
 	scope :courses, where(:role => 'course')
 	scope :recent, order('created_at DESC').limit(4)
+	scope :whats_new, order('created_at DESC').limit(5)
 	scope :popular, where(:role => 'course').where('category_id >= 2').limit(4)
 	scope :free, where(:free => true)
 
